@@ -136,7 +136,6 @@ class Importer
     @curl.url = 'https://runkeeper.com/trackFileUpload'
     @curl.multipart_form_post = true
     @curl.http_post(Curl::PostField.content('uploadType','.gpx'), Curl::PostField.file('trackFile', file.path))
-    puts "Upload of track file returned #{curl.response_code} - #{curl.redirect_url}"
     @curl.multipart_form_post = false
   end
 
