@@ -58,7 +58,6 @@ class Importer
 
   def create_session
     initial_session
-    @curl.url = "https://runkeeper.com/login"
     @curl.post_body = "_eventName=submit&redirectUrl=&flow=&failUrl=&email=#{URI.encode(@username)}&password=#{URI.encode(@password.encode)}" #&_sourcePage=DwCTKeR8O6VSMkQ2IKb_mRoc-IQ0sMyrmpVzZ9KGq7kaHPiENLDMq5qVc2fShqu5knVNNT0OC_8=&__fp=zVEC7V5q9lc='
     @curl.http_post
   end
