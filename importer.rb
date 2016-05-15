@@ -21,6 +21,14 @@ class Importer
     upload_files
   end
 
+  def bulk_delete(ids)
+    create_session
+    ids.each do |id|
+      @curl.url = "https://runkeeper.com/delete/activity?activityId=#{id}"
+      @curl.http_get
+    end
+  end
+
   private
 
   def load_gpx_files
