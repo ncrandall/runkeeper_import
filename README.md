@@ -18,14 +18,14 @@ bundle exec pry -r ./importer.rb
 ```
 
 Create new Importer object, run import
-```
+```ruby
 importer = importer = Importer.new(gpx_zip_file: '<gpx_zip_file>.zip', username: '<username>', password: '<password>')
 importer.import
 ```
 
 After running the import, assuming everything worked you can get a list of 
 created activity ids in the @gpx_hashes instance variable
-```
+```ruby
 created_ids = importer.gpx_hashes.map { |hash| hash[:activity_id] }
 ```
 
