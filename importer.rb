@@ -32,7 +32,6 @@ class Importer
   private
 
   def load_gpx_files
-    Dir.mkdir "tmp_gpx" rescue nil
     Zip::File.open(@gpx_zip_file) do |zip_file|
       zip_file.each do |entry|
         next unless entry.name.end_with?('.gpx')
