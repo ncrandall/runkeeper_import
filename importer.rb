@@ -114,7 +114,7 @@ class Importer
   end
 
   def duration_hash(track_file_hash)
-    duration = Time.at(track_file_hash['trackImportData']['duration']).utc
+    duration = Time.at(track_file_hash['trackImportData']['duration']/1000).utc
     { hours: duration.strftime("%H"), minutes: duration.strftime("%M"), seconds: duration.strftime("%S") }
   end
 
